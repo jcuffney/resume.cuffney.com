@@ -1,8 +1,8 @@
-# cuffney.com
+# resume.cuffney.com
 
-> Personal website
+> Resume website
 
-![primary](https://github.com/jcuffney/cuffney.com/actions/workflows/primary.yml/badge.svg)
+![primary](https://github.com/jcuffney/resume.cuffney.com/actions/workflows/primary.yml/badge.svg)
 
 ## Requirements
 

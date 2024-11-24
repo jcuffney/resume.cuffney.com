@@ -6,12 +6,12 @@ Parameters:
 
   DomainName:
     Type: String
-    Default: "cuffney.com"
+    Default: "resume.cuffney.com"
     Description: domain name (subdomains included)
 
   SsmNamespace:
     Type: String
-    Default: "/cuffney/main/cuffney-com"
+    Default: "/cuffney/main/resume-cuffney-com"
     Description: namespace for SSM parameters
 
 Resources:

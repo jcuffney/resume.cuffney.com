@@ -72,7 +72,7 @@ jobs:
       
       - name: Set Variables
         run: |
-          echo "STACK_NAME=cuffney-com" >> $GITHUB_ENV
+          echo "STACK_NAME=resume-cuffney-com" >> $GITHUB_ENV
           echo "TEMPLATE=./infra/template.yml" >> $GITHUB_ENV
 
       - name: Configure AWS credentials
@@ -112,8 +112,8 @@ jobs:
           sudo apt-get install jq
 
           # get required ssm parameters
-          DISTRIBUTION_ID=$(aws ssm get-parameter --name /cuffney/main/cuffney-com/distribution/id | jq -r '.Parameter.Value')
-          SOURCE_BUCKET_NAME=$(aws ssm get-parameter --name /cuffney/main/cuffney-com/source-bucket/name | jq -r '.Parameter.Value')
+          DISTRIBUTION_ID=$(aws ssm get-parameter --name /cuffney/main/resume-cuffney-com/distribution/id | jq -r '.Parameter.Value')
+          SOURCE_BUCKET_NAME=$(aws ssm get-parameter --name /cuffney/main/resume-cuffney-com/source-bucket/name | jq -r '.Parameter.Value')
           BUILD_DIRECTORY=./out
 
           # sync build to s3
