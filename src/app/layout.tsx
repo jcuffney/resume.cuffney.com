@@ -21,8 +21,8 @@ const interBold = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Joe Cuffney | Home",
-  description: "Joe Cuffney's landing page",
+  title: "Joe Cuffney | Resume",
+  description: "Joe Cuffney's resume",
 };
 
 export default function RootLayout({
