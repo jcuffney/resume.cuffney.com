@@ -1,0 +1,24 @@
+# Public via the Cloudflare tunnel: class `external` is the Traefik only the
+# in-cluster cloudflared reaches; the target annotation makes external-dns
+# create the Cloudflare CNAME.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: resume
+  annotations:
+    # TUNNEL_ID = Cloudflare tunnel UUID from manual-setup step 2.1
+    # (1Password item `cloudflare-tunnel`, field tunnel_id). Replace before syncing.
+    external-dns.alpha.kubernetes.io/target: "TUNNEL_ID.cfargotunnel.com"
+spec:
+  ingressClassName: external
+  rules:
+    - host: resume.cuffney.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: resume
+                port:
+                  name: http

@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Namespace omitted: Argo CD sets it ("resume").
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: resume
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+configMapGenerator:
+  # The PDF is served straight from a ConfigMap (kustomize stores it as
+  # binaryData). Replace deploy/resume.pdf and push to publish a new version:
+  # the generated name hash changes, so the Deployment rolls automatically.
+  - name: resume-pdf
+    files:
+      - resume.pdf
+  - name: resume-nginx
+    files:
+      - default.conf=nginx.conf
