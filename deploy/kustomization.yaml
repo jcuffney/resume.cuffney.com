@@ -8,6 +8,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - ingress-internal.yaml
 configMapGenerator:
   # The PDF is served straight from a ConfigMap (kustomize stores it as
   # binaryData). Replace deploy/resume.pdf and push to publish a new version:
